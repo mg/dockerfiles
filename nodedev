@@ -1,0 +1,7 @@
+FROM node:slim
+MAINTAINER Magnús Örn Gylfason (magnus.gylfason@gmail.com)
+RUN npm install -g nodemon
+EXPOSE 3000
+VOLUME  ["/app"]
+WORKDIR /app/server
+CMD ["nodemon", "index.js"]
