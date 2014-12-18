@@ -1,0 +1,11 @@
+FROM ubuntu:14.10
+RUN apt-get update && apt-get install --no-install-recommends -y docker.io nodejs npm && ln -s /usr/bin/nodejs /usr/bin/node && mkdir -p /opt/app
+EXPOSE 3000
+ADD package.json /tmp/package.json
+ADD server/package.json /tmp/server/package.json
+ADD client/package.json /tmp/client/package.json
+RUN cd /tmp && npm install && cd server && npm install && cd ../client && npm install
+ADD . /opt/app
+RUN cp -R /tmp/node_modules /opt/app && cp -R /tmp/server/node_modules /opt/app/server && cp -R /tmp/client/node_modules /opt/app/client
+WORKDIR /opt/app/server
+CMD ["node", "index.js"]
