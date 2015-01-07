@@ -5,3 +5,8 @@ RUN mkdir -p /root/.btcd
 ADD btcd.conf /root/.btcd/
 ADD btcctl.conf /root/.btcd/
 CMD ["btcd"]
+
+#btcd.conf/btcctl.conf example
+#[Application Options]
+#rpcuser=USER
+#rpcpass=PASSWORD
