@@ -1,0 +1,7 @@
+FROM golang:1.4.0
+
+RUN go get github.com/conformal/btcd/...
+RUN mkdir -p /root/.btcd
+ADD btcd.conf /root/.btcd/
+ADD btcctl.conf /root/.btcd/
+CMD ["btcd"]
