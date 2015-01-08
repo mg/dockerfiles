@@ -14,4 +14,4 @@ RUN go get code.google.com/p/google-api-go-client/compute/v1
 
 WORKDIR /go/src
 
-# docker run --rm -it -v /Users/mg/Documents/Docker/gcloud-book:/go/src/gcebook -w /go/src/gcebook mgns/gcloud
+# docker run --rm -it -v ($PWD):/go/src/gcebook -w /go/src/gcebook mgns/gcloud
