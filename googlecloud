@@ -12,6 +12,4 @@ RUN go get google.golang.org/cloud
 RUN go get golang.org/x/oauth2
 RUN go get code.google.com/p/google-api-go-client/compute/v1
 
-WORKDIR /go/src
-
 # docker run --rm -it -v ($PWD):/go/src/gcebook -w /go/src/gcebook mgns/gcloud
