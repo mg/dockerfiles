@@ -10,6 +10,7 @@ ENV PATH /google-cloud-sdk/bin:$PATH
 
 RUN go get google.golang.org/cloud
 RUN go get golang.org/x/oauth2
-RUN go get code.google.com/p/google-api-go-client/compute/v1
 
-# docker run --rm -it -v ($PWD):/go/src/gcebook -w /go/src/gcebook mgns/gcloud
+#RUN go get code.google.com/p/google-api-go-client/compute/v1
+
+# docker run --rm -it -v ($PWD):/go/src/PROJECT -w /go/src/PROJECT mgns/gcloud
