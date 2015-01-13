@@ -1,12 +1,9 @@
 FROM golang:1.4.0
 
-RUN apt-get update && apt-get install -y libreadline-dev && mkdir -p /go/lib
-VOLUME ["/go/host", "/go/src"]
-ENV GOPATH /go/lib:$GOPATH
-ENV PATH /go/lib/bin:$PATH
-RUN go get github.com/derekparker/delve/cmd/dlv
-ENV GOPATH /go/host:$GOPATH
-ENV PATH /go/host/bin:$PATH
-WORKDIR /go/src/
+RUN apt-get update && apt-get install -y libreadline-dev
 
-RUN ["/bin/bash"]  
+RUN go get github.com/derekparker/delve/cmd/dlv
+
+RUN ["/bin/bash"]
+
+# docker run --rm -ti -v $PWD:/go/src/NAME -w /go/src/NAME
